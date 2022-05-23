@@ -18,6 +18,11 @@ Android
 ## 使用言語
 C#
 
+## 主なプログラム
+・[駒を投げる](https://github.com/itc-c21026/Straight_Fo-/blob/main/Scripts/Ball.cs)
+・[カードをドラッグして駒を召喚する](https://github.com/itc-c21026/Straight_Fo-/blob/main/Scripts/CardMoveScript.cs)
+・[ゲームシステム制御](https://github.com/itc-c21026/Straight_Fo-/blob/main/Scripts/GameController.cs)
+
 ## ゲームストーリー
 
 ## ゲームルール
