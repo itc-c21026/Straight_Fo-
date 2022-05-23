@@ -23,8 +23,6 @@ C#
 ・[カードをドラッグして駒を召喚する](https://github.com/itc-c21026/Straight_Fo-/blob/main/Scripts/CardMoveScript.cs)  
 ・[ゲームシステム制御](https://github.com/itc-c21026/Straight_Fo-/blob/main/Scripts/GameController.cs)
 
-## ゲームストーリー
-
 ## ゲームルール  
 駒を掴み、スワイプで投げる  
 カードは普通の駒や、様々な能力を持つ特殊駒を召喚できる  
