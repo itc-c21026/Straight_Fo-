@@ -34,3 +34,5 @@ Unity 2020.3.4f1
 
 ## スクリーンショット
 ![ScreenShot1](https://github.com/itc-c21026/Straight_Fo-/blob/main/ScreenShot/Title.png)
+![ScreenShot2](https://github.com/itc-c21026/Straight_Fo-/blob/main/ScreenShot/GamePlay.png)
+![ScreenShot3](https://github.com/itc-c21026/Straight_Fo-/blob/main/ScreenShot/Win_Lose.png)
