@@ -33,4 +33,4 @@ Unity 2020.3.4f1
 ・荻堂盛那 / デザイナー  
 
 ## スクリーンショット
-![ScreenShot1](./ScreenShot/スクリーンショット(262).png)
+![ScreenShot1](/ScreenShot/スクリーンショット(262).png)
