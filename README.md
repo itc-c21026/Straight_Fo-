@@ -3,6 +3,7 @@ c21026 與那覇帆風
 チーム制作「Straight_Fo!!!」
 
 ## ファイル構成
+・[Unityデータ_Scripts](Scripts)
 ・[Unityデータ_others](others)  
 ビルド
 
