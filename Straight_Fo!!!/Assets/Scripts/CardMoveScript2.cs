@@ -5,8 +5,8 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 /*------------------------------------------
- –P‘¤‚ÌƒJ[ƒh‚ğƒhƒ‰ƒbƒO‚µ‚Ä‹î‚â“Áê‹Ê‚ğ¢Š«‚·‚éƒvƒƒOƒ‰ƒ€
- ŠeƒvƒƒOƒ‰ƒ€‚Ìà–¾‚Í—´‘¤(CardMoveScript)‚É‹LÚ
+ é³³å´ã®ã‚«ãƒ¼ãƒ‰ã‚’ãƒ‰ãƒ©ãƒƒã‚°ã—ã¦é§’ã‚„ç‰¹æ®Šç‰ã‚’å¬å–šã™ã‚‹ãƒ—ãƒ­ã‚°ãƒ©ãƒ 
+ å„ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã®èª¬æ˜ã¯é¾å´(CardMoveScript)ã«è¨˜è¼‰
 ------------------------------------------*/
 
 public class CardMoveScript2 : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
@@ -220,11 +220,11 @@ public class CardMoveScript2 : MonoBehaviour, IPointerDownHandler, IDragHandler,
 
                     script4.cms2 = 3;
 
-                    // ƒpƒbƒNƒ}ƒ“¶¬
+                    // ãƒ‘ãƒƒã‚¯ãƒãƒ³ç”Ÿæˆ
                     EffectE3 = GameObject.Find("004_Eat");
                     GameObject prefab = (GameObject)Resources.Load("Pac_Prefab2");
                     Instantiate(prefab, new Vector3((tmp2.x - 640) / 35, 0, (tmp2.y - 400) / 35), Quaternion.identity);
-                    // ƒpƒbƒNƒ}ƒ“§Œä true
+                    // ãƒ‘ãƒƒã‚¯ãƒãƒ³åˆ¶å¾¡ true
                     script3.pacmanbl2_2 = true;
 
                     script6.audioSource.PlayOneShot(script6.sound1);
@@ -248,7 +248,7 @@ public class CardMoveScript2 : MonoBehaviour, IPointerDownHandler, IDragHandler,
 
                     script4.cms2 = 4;
 
-                    // ƒ{ƒ€¶¬
+                    // ãƒœãƒ ç”Ÿæˆ
                     EffectB4 = GameObject.Find("006_Bom");
                     GameObject prefab = (GameObject)Resources.Load("bom2_1");
                     Instantiate(prefab, new Vector3((tmp2.x - 640) / 35, 0, (tmp2.y - 400) / 35), Quaternion.identity);
@@ -274,11 +274,11 @@ public class CardMoveScript2 : MonoBehaviour, IPointerDownHandler, IDragHandler,
 
                     script4.cms2 = 5;
 
-                    // ƒgƒ‰ƒbƒN¶¬
+                    // ãƒˆãƒ©ãƒƒã‚¯ç”Ÿæˆ
                     EffectT5 = GameObject.Find("001_Syoukan");
                     GameObject prefab = (GameObject)Resources.Load("track2");
                     Instantiate(prefab, new Vector3((tmp2.x - 640) / 35, -0.3f, (tmp2.y - 400) / 35), Quaternion.identity);
-                    // ƒgƒ‰ƒbƒN§Œä true
+                    // ãƒˆãƒ©ãƒƒã‚¯åˆ¶å¾¡ true
                     script3.trackbl2_2 = true;
 
                     script6.audioSource.PlayOneShot(script6.sound6);
@@ -305,7 +305,8 @@ public class CardMoveScript2 : MonoBehaviour, IPointerDownHandler, IDragHandler,
 
         script6.audioSource.PlayOneShot(script6.sound7);
     }
-
+    
+    // æ´ã‚“ã§ã„ã‚‹ã‚«ãƒ¼ãƒ‰ä»¥å¤–éè¡¨ç¤ºã«ãªã‚‹
     void sc()
     {
         if (ImgObj.tag == "Cost0")
