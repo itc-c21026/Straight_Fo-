@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /*------------------------------------
- ƒIƒuƒWƒFƒNƒg‚ğíœ‚·‚éƒvƒƒOƒ‰ƒ€
+ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å‰Šé™¤ã™ã‚‹ãƒ—ãƒ­ã‚°ãƒ©ãƒ 
 ------------------------------------*/
 
 public class Destroy : MonoBehaviour
@@ -19,7 +19,7 @@ public class Destroy : MonoBehaviour
         script2 = obj.GetComponent<GameController>();
     }
 
-    // ƒ^ƒO‚ªKOMA‚Æ‚Ô‚Â‚©‚Á‚½ê‡A‚»‚ÌƒIƒuƒWƒFƒNƒg‚ªíœ‚³‚ê‚é
+    // ã‚¿ã‚°ãŒKOMAã¨ã¶ã¤ã‹ã£ãŸå ´åˆã€ãã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒå‰Šé™¤ã•ã‚Œã‚‹
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "KOMA" || other.gameObject.tag == "KOMA2")
@@ -31,8 +31,8 @@ public class Destroy : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        // ƒ^ƒO‚ªTRACK‚ÌƒIƒuƒWƒFƒNƒg‚Æ‚Ô‚Â‚©‚Á‚½ê‡A‚»‚ÌƒIƒuƒWƒFƒNƒg‚ªÁ‚¦‚é
-        // script...‚Í‘¼‚ÌƒvƒƒOƒ‰ƒ€
+        // ã‚¿ã‚°ãŒTRACKã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã¨ã¶ã¤ã‹ã£ãŸå ´åˆã€ãã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒæ¶ˆãˆã‚‹
+        // script...ã¯ä»–ã®ãƒ—ãƒ­ã‚°ãƒ©ãƒ 
         if (collision.gameObject.tag == "TRACK")
         {
             Destroy(collision.gameObject);
@@ -40,7 +40,7 @@ public class Destroy : MonoBehaviour
             script2.trackbl3 = false;
         }
 
-        // ƒ^ƒO‚ªTRACK2Aã‹L‚Æ“¯‚¶ƒvƒƒOƒ‰ƒ€
+        // ã‚¿ã‚°ãŒTRACK2ã€ä¸Šè¨˜ã¨åŒã˜ãƒ—ãƒ­ã‚°ãƒ©ãƒ 
         if (collision.gameObject.tag == "TRACK2")
         {
             Destroy(collision.gameObject);
@@ -48,7 +48,7 @@ public class Destroy : MonoBehaviour
             script2.trackbl2_3 = false;
         }
 
-        // ƒ^ƒO‚ªPACMANAã‹L‚Æ“¯‚¶ƒvƒƒOƒ‰ƒ€
+        // ã‚¿ã‚°ãŒPACMANã€ä¸Šè¨˜ã¨åŒã˜ãƒ—ãƒ­ã‚°ãƒ©ãƒ 
         if (collision.gameObject.tag == "PACMAN")
         {
             Destroy(collision.gameObject);
@@ -56,7 +56,7 @@ public class Destroy : MonoBehaviour
             script2.pacmanbl3 = false;
         }
 
-        // ƒ^ƒO‚ªPACMAN2Aã‹L‚Æ“¯‚¶ƒvƒƒOƒ‰ƒ€
+        // ã‚¿ã‚°ãŒPACMAN2ã€ä¸Šè¨˜ã¨åŒã˜ãƒ—ãƒ­ã‚°ãƒ©ãƒ 
         if (collision.gameObject.tag == "PACMAN2")
         {
             Destroy(collision.gameObject);
@@ -64,7 +64,7 @@ public class Destroy : MonoBehaviour
             script2.pacmanbl2_3 = false;
         }
 
-        // ƒ^ƒO‚ªKOMAEKOMA2Aã‹L‚Æ“¯‚¶ƒvƒƒOƒ‰ƒ€
+        // ã‚¿ã‚°ãŒKOMAãƒ»KOMA2ã€BOMã€ä¸Šè¨˜ã¨åŒã˜ãƒ—ãƒ­ã‚°ãƒ©ãƒ 
         if (collision.gameObject.tag == "KOMA" || collision.gameObject.tag == "KOMA2" || collision.gameObject.tag == "BOM")
         {
             Destroy(collision.gameObject);
