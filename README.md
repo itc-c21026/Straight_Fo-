@@ -1,11 +1,13 @@
 # Straight_Fo!!!
-c21026 與那覇帆風  
 チーム制作「Straight_Fo!!!」
 
+## メンバー/役割
+・與那覇帆風 / プログラマ  
+・与那嶺達矢 / デザイナー  
+・荻堂盛那 / デザイナー  
+
 ## ファイル構成
-・[Unityデータ_Scripts](Scripts)  
-・[Unityデータ_others](others)  
-ビルド
+・[Unityデータ](Straight_Fo!!!)
 
 ## 概要
 
@@ -13,15 +15,15 @@ c21026 與那覇帆風
 対戦ゲーム
 
 ## プラットフォーム
-Android
+・[Android](https://github.com/itc-c21026/Straight_Fo-/blob/main/Straight_Fo!!!/Straight_Fo!!!.apk)
 
 ## 使用言語
 C#
 
 ## 主なプログラム
-・[駒を投げる](https://github.com/itc-c21026/Straight_Fo-/blob/main/Scripts/Ball.cs)  
-・[カードをドラッグして駒を召喚する](https://github.com/itc-c21026/Straight_Fo-/blob/main/Scripts/CardMoveScript.cs)  
-・[ゲームシステム制御](https://github.com/itc-c21026/Straight_Fo-/blob/main/Scripts/GameController.cs)
+・[駒を投げる](https://github.com/itc-c21026/Straight_Fo-/blob/main/Straight_Fo!!!/Assets/Scripts/Ball.cs)
+・[カードをドラッグして駒を召喚する](https://github.com/itc-c21026/Straight_Fo-/blob/main/Straight_Fo!!!/Assets/Scripts/CardMoveScript.cs)
+・[ゲームシステム制御](https://github.com/itc-c21026/Straight_Fo-/blob/main/Straight_Fo!!!/Assets/Scripts/GameController.cs)
 
 ## ゲームルール  
 駒を掴み、スワイプで投げる  
@@ -34,11 +36,6 @@ Unity 2020.3.4f1
 
 ## 製作期間
 2021年 12月~ 2022年 1,2月 (3ヶ月)
-
-## メンバー/役割
-・與那覇帆風 / プログラマ  
-・与那嶺達矢 / デザイナー  
-・荻堂盛那 / デザイナー  
 
 ## スクリーンショット
 ![ScreenShot1](https://github.com/itc-c21026/Straight_Fo-/blob/main/ScreenShot/Title.png)
