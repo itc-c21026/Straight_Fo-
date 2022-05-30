@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /*----------------------------------
- —´‘¤‚Ì‹î‚ğ“Š‚°‚éƒvƒƒOƒ‰ƒ€
+ ã‚¿ã‚¤ãƒˆãƒ«ç”»é¢ã§é§’ã‚’æŠ•ã’ã‚‹ãƒ—ãƒ­ã‚°ãƒ©ãƒ 
 ----------------------------------*/
 
 public class StartBall : MonoBehaviour
@@ -17,23 +17,23 @@ public class StartBall : MonoBehaviour
 
     string CardST;
 
-    // ƒtƒŠƒbƒNÅ¬ˆÚ“®‹——£
+    // ãƒ•ãƒªãƒƒã‚¯æœ€å°ç§»å‹•è·é›¢
     [SerializeField]
     private Vector2 FlickMinRange = new Vector2(30.0f, 30.0f);
-    // ƒXƒƒCƒvÅ¬ˆÚ“®‹——£
+    // ã‚¹ãƒ¯ã‚¤ãƒ—æœ€å°ç§»å‹•è·é›¢
     //[SerializeField]
     private Vector2 SwipeMinRange = new Vector2(50.0f, 50.0f);
-    // TAP‚ğNONE‚É–ß‚·‚Ü‚Å‚ÌƒJƒEƒ“ƒg
+    // TAPã‚’NONEã«æˆ»ã™ã¾ã§ã®ã‚«ã‚¦ãƒ³ãƒˆ
     [SerializeField]
     private int NoneCountMax = 2;
     private int NoneCountNow = 0;
-    // ƒXƒƒCƒv“ü—Í‹——£
+    // ã‚¹ãƒ¯ã‚¤ãƒ—å…¥åŠ›è·é›¢
     private Vector2 SwipeRange;
-    // “ü—Í•ûŒü‹L˜^—p
+    // å…¥åŠ›æ–¹å‘è¨˜éŒ²ç”¨
     private Vector2 InputSTART;
     private Vector2 InputMOVE;
     private Vector2 InputEND;
-    // ƒtƒŠƒbƒN‚Ì•ûŒü
+    // ãƒ•ãƒªãƒƒã‚¯ã®æ–¹å‘
     public enum FlickDirection
     {
         NONE,
@@ -56,7 +56,7 @@ public class StartBall : MonoBehaviour
         DOWN_RIGHT_RIGHT
     }
     public FlickDirection NowFlick = FlickDirection.NONE;
-    // ƒXƒƒCƒv‚Ì•ûŒü
+    // ã‚¹ãƒ¯ã‚¤ãƒ—ã®æ–¹å‘
     public enum SwipeDirection
     {
         NONE,
@@ -100,18 +100,18 @@ public class StartBall : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            // ƒJƒƒ‰‚ÌƒNƒŠƒbƒN‚µ‚½•ûŒü‚ÉƒŒƒC‚ğ”ò‚Î‚·
+            // ã‚«ãƒ¡ãƒ©ã®ã‚¯ãƒªãƒƒã‚¯ã—ãŸæ–¹å‘ã«ãƒ¬ã‚¤ã‚’é£›ã°ã™
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            // ƒŒƒC‚É“–‚½‚Á‚½ƒIƒuƒWƒFƒNƒg‚ğhit‚É“ü‚ê‚é
+            // ãƒ¬ã‚¤ã«å½“ãŸã£ãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’hitã«å…¥ã‚Œã‚‹
             RaycastHit hit;
             // ?
             if (Physics.Raycast(ray, out hit, Mathf.Infinity))
             {
-                // “–‚½‚Á‚½ƒIƒuƒWƒFƒNƒg‚Ìƒ^ƒO‚ªKOMA‚¾‚Á‚½ê‡
+                // å½“ãŸã£ãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ã‚¿ã‚°ãŒKOMAã ã£ãŸå ´åˆ
                 if (hit.collider.tag == "KOMA")
                 {
-                    // RigidbodyƒRƒ“ƒ|[ƒlƒ“ƒgæ“¾
+                    // Rigidbodyã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆå–å¾—
                     rb = hit.collider.GetComponent<Rigidbody>();
                     isGrabbing = true;
                     cube = hit.transform;
@@ -123,21 +123,21 @@ public class StartBall : MonoBehaviour
 
         if (isGrabbing)
         {
-            // ƒŒƒC‚ğ”ò‚Î‚µ‘±‚¯‚é
+            // ãƒ¬ã‚¤ã‚’é£›ã°ã—ç¶šã‘ã‚‹
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             float rayDistance;
             plane.Raycast(ray, out rayDistance);
 
 
-            // ’Í‚ñ‚Å‚¢‚éƒIƒuƒWƒFƒNƒg‚ÌƒJƒƒ‰‚©‚ç‚Ì‹——£(?)
+            // æ´ã‚“ã§ã„ã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ã‚«ãƒ¡ãƒ©ã‹ã‚‰ã®è·é›¢(?)
             cube.position = ray.GetPoint(rayDistance + 1.3f);
             if (Input.GetMouseButtonUp(0))
             {
 
-                // “Š‚°‚é—Í‚ÌŒvZ
+                // æŠ•ã’ã‚‹åŠ›ã®è¨ˆç®—
                 Flk = thrust * GetSwipeRange();
 
-                // ˆê’èˆÈã‚Ì—Í‚ğ—^‚¦‚é‚±‚Æ‚Í‚Å‚«‚È‚¢(“Š‚°‚é—Í)
+                // ä¸€å®šä»¥ä¸Šã®åŠ›ã‚’ä¸ãˆã‚‹ã“ã¨ã¯ã§ããªã„(æŠ•ã’ã‚‹åŠ›)
                 if (S == true)
                 {
                     Flk *= 1.2f;
@@ -153,7 +153,7 @@ public class StartBall : MonoBehaviour
 
                 S = false;
 
-                // ƒXƒƒCƒv‚Ì•ûŒü‚Å“Š‚°‚é•ûŒü‚ğŒˆ‚ß‚é
+                // ã‚¹ãƒ¯ã‚¤ãƒ—ã®æ–¹å‘ã§æŠ•ã’ã‚‹æ–¹å‘ã‚’æ±ºã‚ã‚‹
                 if (NowSwipe == SwipeDirection.UP)
                 {
                     rb.AddForce(new Vector3(0, 0, 1) * Flk);
@@ -194,7 +194,7 @@ public class StartBall : MonoBehaviour
         if (Application.isEditor)
         {
 
-            // ƒtƒŠƒbƒN‚âƒXƒƒCƒv‚ÌŒvZ‚ğ‚µ‚Ä‚é
+            // ãƒ•ãƒªãƒƒã‚¯ã‚„ã‚¹ãƒ¯ã‚¤ãƒ—ã®è¨ˆç®—ã‚’ã—ã¦ã‚‹
             if (Input.GetMouseButtonDown(0))
             {
                 InputSTART = Input.mousePosition;
@@ -218,14 +218,14 @@ public class StartBall : MonoBehaviour
 
         //---------------------------------------------
 
-        // ƒ^ƒbƒ`‚µ‚Ä‚é”‚ğŠi”[
+        // ã‚¿ãƒƒãƒã—ã¦ã‚‹æ•°ã‚’æ ¼ç´
         Touch[] touches = Input.touches;
         for (int i = 0; i < touches.Length; i++)
         {
             Touch t = touches[i];
             var touch = Input.touches[i];
 
-            // ª‚Ì‚Ù‚¤‚ÌPC‘€ì‚Æ‚Ù‚Ú“¯‚¶
+            // â†‘ã®ã»ã†ã®PCæ“ä½œã¨ã»ã¼åŒã˜
             if (Input.touchCount > 0)
             {
                 Ray ray = Camera.main.ScreenPointToRay(touch.position);
@@ -320,7 +320,7 @@ public class StartBall : MonoBehaviour
 
     }
 
-    // “ü—Í“à—e‚©‚çƒtƒŠƒbƒN•ûŒü‚ğŒvZ
+    // å…¥åŠ›å†…å®¹ã‹ã‚‰ãƒ•ãƒªãƒƒã‚¯æ–¹å‘ã‚’è¨ˆç®—
     private void FlickCLC()
     {
         Vector2 _work = new Vector2((new Vector3(InputEND.x, 0, 0) - new Vector3(InputSTART.x, 0, 0)).magnitude, (new Vector3(0, InputEND.y, 0) - new Vector3(0, InputSTART.y, 0)).magnitude);
@@ -344,7 +344,7 @@ public class StartBall : MonoBehaviour
         }
     }
 
-    // “ü—Í“à—e‚©‚çƒXƒƒCƒv•ûŒü‚ğŒvZ
+    // å…¥åŠ›å†…å®¹ã‹ã‚‰ã‚¹ãƒ¯ã‚¤ãƒ—æ–¹å‘ã‚’è¨ˆç®—
     private void SwipeCLC()
     {
         SwipeRange = new Vector2((new Vector3(InputMOVE.x, 0, 0) - new Vector3(InputSTART.x, 0, 0)).magnitude, (new Vector3(0, InputMOVE.y, 0) - new Vector3(0, InputSTART.y, 0)).magnitude);
@@ -368,7 +368,7 @@ public class StartBall : MonoBehaviour
         }
     }
 
-    // NONE‚ÉƒŠƒZƒbƒg
+    // NONEã«ãƒªã‚»ãƒƒãƒˆ
     private void ResetParameter()
     {
         NoneCountNow++;
@@ -381,19 +381,19 @@ public class StartBall : MonoBehaviour
         }
     }
 
-    // ƒtƒŠƒbƒN•ûŒü‚Ìæ“¾
+    // ãƒ•ãƒªãƒƒã‚¯æ–¹å‘ã®å–å¾—
     public FlickDirection GetNowFlick()
     {
         return NowFlick;
     }
 
-    // ƒXƒƒCƒv•ûŒü‚Ìæ“¾
+    // ã‚¹ãƒ¯ã‚¤ãƒ—æ–¹å‘ã®å–å¾—
     public SwipeDirection GetNowSwipe()
     {
         return NowSwipe;
     }
 
-    // ƒXƒƒCƒv—Ê‚Ìæ“¾
+    // ã‚¹ãƒ¯ã‚¤ãƒ—é‡ã®å–å¾—
     public float GetSwipeRange()
     {
         if (SwipeRange.x > SwipeRange.y)
@@ -406,7 +406,7 @@ public class StartBall : MonoBehaviour
         }
     }
 
-    // ƒXƒƒCƒv—Ê‚Ìæ“¾
+    // ã‚¹ãƒ¯ã‚¤ãƒ—é‡ã®å–å¾—
     public Vector2 GetSwipeRangeVec()
     {
         if (NowSwipe != SwipeDirection.NONE)
@@ -419,7 +419,7 @@ public class StartBall : MonoBehaviour
         }
     }
 
-    // ƒŒƒC‚Ì‹——£‚ÌŒvZ(?)
+    // ãƒ¬ã‚¤ã®è·é›¢ã®è¨ˆç®—(?)
 public class RayDistanceCompare : IComparer<RaycastHit>
     {
         public int Compare(RaycastHit x, RaycastHit y)
