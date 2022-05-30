@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 /*------------------------------------------
- —´‘¤‚ÌƒJ[ƒh‚ğƒhƒ‰ƒbƒO‚µ‚Ä‹î‚â“Áê‹Ê‚ğ¢Š«‚·‚éƒvƒƒOƒ‰ƒ€
+ é¾å´ã®ã‚«ãƒ¼ãƒ‰ã‚’ãƒ‰ãƒ©ãƒƒã‚°ã—ã¦é§’ã‚„ç‰¹æ®Šç‰ã‚’å¬å–šã™ã‚‹ãƒ—ãƒ­ã‚°ãƒ©ãƒ 
 -------------------------------------------*/
 
 public class CardMoveScript : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
@@ -73,22 +73,22 @@ public class CardMoveScript : MonoBehaviour, IPointerDownHandler, IDragHandler, 
         Application.targetFrameRate = 30;
     }
 
-    // ƒJ[ƒh‚ğ’Í‚İn‚ß‚½‚ÌƒvƒƒOƒ‰ƒ€
+    // ã‚«ãƒ¼ãƒ‰ã‚’æ´ã¿å§‹ã‚ãŸæ™‚ã®ãƒ—ãƒ­ã‚°ãƒ©ãƒ 
     public void OnPointerDown(PointerEventData eventData)
     {
         if (drag == false)
         {
             drag = true;
 
-            // ƒJ[ƒh‚ÌÀ•Wæ“¾
+            // ã‚«ãƒ¼ãƒ‰ã®åº§æ¨™å–å¾—
             Vector3 tmp = this.transform.position;
             x = tmp.x;
             y = tmp.y;
 
-            // ImgObj‚É’Í‚ñ‚¾ƒIƒuƒWƒFƒNƒg‚ÌImageƒRƒ“ƒ|[ƒlƒ“ƒg‚ğæ“¾
+            // ImgObjã«æ´ã‚“ã ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®Imageã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’å–å¾—
             ImgObj = eventData.pointerEnter.GetComponent<Image>();
 
-            // ImgObj‚Ìƒ^ƒO‚ğ‘¼‚ÌƒXƒNƒŠƒvƒg‚Ìstring‚É‘ã“ü
+            // ImgObjã®ã‚¿ã‚°ã‚’ä»–ã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆã®stringã«ä»£å…¥
             if (ImgObj.tag == "Cost2") script3.COSTst = "Cost2";
             if (ImgObj.tag == "Cost2_2") script3.COSTst = "Cost2_2";
             if (ImgObj.tag == "Cost3") script3.COSTst = "Cost3";
@@ -101,7 +101,7 @@ public class CardMoveScript : MonoBehaviour, IPointerDownHandler, IDragHandler, 
         }
     }
 
-    // ƒJ[ƒh‚ğ’Í‚ñ‚Å‚¢‚éŠÔ‚ÌƒvƒƒOƒ‰ƒ€
+    // ã‚«ãƒ¼ãƒ‰ã‚’æ´ã‚“ã§ã„ã‚‹é–“ã®ãƒ—ãƒ­ã‚°ãƒ©ãƒ 
     public void OnDrag(PointerEventData eventData)
     {
         Vector3 temp = eventData.position;
@@ -122,7 +122,7 @@ public class CardMoveScript : MonoBehaviour, IPointerDownHandler, IDragHandler, 
         Vector3 tmp2 = eventData.position;
 
 
-        // ImgObj‚Ìƒ^ƒO‚É‚æ‚èAƒRƒXƒg‚Ì•Ï“®
+        // ImgObjã®ã‚¿ã‚°ã«ã‚ˆã‚Šã€ã‚³ã‚¹ãƒˆã®å¤‰å‹•
         if (ImgObj.tag == "Cost2")
         {
             script2.AllClear();
@@ -168,17 +168,17 @@ public class CardMoveScript : MonoBehaviour, IPointerDownHandler, IDragHandler, 
 
                 script4.cms = 0;
 
-                // Â‚¢‹î‚ğ¶¬
+                // é’ã„é§’ã‚’ç”Ÿæˆ
                 GameObject prefab = (GameObject)Resources.Load("KOMA_Blue");
                 Instantiate(prefab, new Vector3((tmp2.x - 640) / 35, 1, (tmp2.y - 400) / 35), Quaternion.identity);
 
-                // ""ƒGƒtƒFƒNƒg¶¬
+                // "ç‹›"ã‚¨ãƒ•ã‚§ã‚¯ãƒˆç”Ÿæˆ
                 Effect0 = GameObject.Find("001_Shimple");
                 GameObject clone = Instantiate(Effect0, new Vector3((tmp2.x - 640) / 35, 0.5f, (tmp2.y - 400) / 35), Quaternion.identity);
                 clone.transform.Rotate(new Vector3(90, 90, 0));
                 Destroy(clone, deleteTime);
 
-                // ƒRƒXƒg•Ï“® ¦ƒRƒXƒg0‚È‚Ì‚Å•Ï“®‚È‚µ
+                // ã‚³ã‚¹ãƒˆå¤‰å‹• â€»ã‚³ã‚¹ãƒˆ0ãªã®ã§å¤‰å‹•ãªã—
                 Cst.GetComponent<CostNumberImage>().AllClear();
                 Cst.GetComponent<CostNumberImage>().Set1();
             }
@@ -187,25 +187,25 @@ public class CardMoveScript : MonoBehaviour, IPointerDownHandler, IDragHandler, 
             {
                 if (ImgObj.tag == "Cost2")
                 {
-                    // ƒRƒXƒgÁ”ï2
+                    // ã‚³ã‚¹ãƒˆæ¶ˆè²»2
                     script.Cost -= 2;
 
                     card();
 
                     script4.cms = 1;
 
-                    // Â‚¢‹î2ŒÂ¶¬
+                    // é’ã„é§’2å€‹ç”Ÿæˆ
                     GameObject prefab = (GameObject)Resources.Load("KOMA_blue");
                     Instantiate(prefab, new Vector3((tmp2.x - 640) / 35, 1, (tmp2.y - 400) / 35), Quaternion.identity);
                     Instantiate(prefab, new Vector3((tmp2.x - 640) / 35, 1, (tmp2.y - 400) / 35 - 1), Quaternion.identity);
 
-                    // "‘o"ƒGƒtƒFƒNƒg¶¬
+                    // "åŒ"ã‚¨ãƒ•ã‚§ã‚¯ãƒˆç”Ÿæˆ
                     EffectD2 = GameObject.Find("003_Double");
                     GameObject clone = Instantiate(EffectD2, new Vector3((tmp2.x - 640) / 35, 0.5f, (tmp2.y - 400) / 35), Quaternion.identity);
                     clone.transform.Rotate(new Vector3(90, 90, 0));
                     Destroy(clone, deleteTime);
 
-                    // ƒRƒXƒg•Ï“® ‘S•””ñ•\¦‚É‚³‚¹AƒRƒXƒgÁ”ï‚µ‚½Œã‚Ì”‚ğ•\¦
+                    // ã‚³ã‚¹ãƒˆå¤‰å‹• å…¨éƒ¨éè¡¨ç¤ºã«ã•ã›ã€ã‚³ã‚¹ãƒˆæ¶ˆè²»ã—ãŸå¾Œã®æ•°ã‚’è¡¨ç¤º
                     Cst.GetComponent<CostNumberImage>().AllClear();
                     Cst.GetComponent<CostNumberImage>().Set1();
                 }
@@ -218,18 +218,18 @@ public class CardMoveScript : MonoBehaviour, IPointerDownHandler, IDragHandler, 
 
                     script4.cms = 2;
 
-                    // Â‚¢‹îS‚ğ¶¬
+                    // é’ã„é§’Sã‚’ç”Ÿæˆ
                     EffectS2 = GameObject.Find("002_Speed");
                     GameObject prefab = (GameObject)Resources.Load("KOMA_Blue_S");
                     Instantiate(prefab, new Vector3((tmp2.x - 640) / 35, 1, (tmp2.y - 400) / 35), Quaternion.identity);
                     script6.S = true;
 
-                    // "‘¬"ƒGƒtƒFƒNƒg¶¬
+                    // "é€Ÿ"ã‚¨ãƒ•ã‚§ã‚¯ãƒˆç”Ÿæˆ
                     GameObject clone = Instantiate(EffectS2, new Vector3((tmp2.x - 640) / 35, 0.5f, (tmp2.y - 400) / 35), Quaternion.identity);
                     clone.transform.Rotate(new Vector3(90, 90, 0));
                     Destroy(clone, deleteTime);
 
-                    // ƒRƒXƒg•Ï“®
+                    // ã‚³ã‚¹ãƒˆå¤‰å‹•
                     Cst.GetComponent<CostNumberImage>().AllClear();
                     Cst.GetComponent<CostNumberImage>().Set1();
                 }
@@ -239,28 +239,28 @@ public class CardMoveScript : MonoBehaviour, IPointerDownHandler, IDragHandler, 
             {
                 if (ImgObj.tag == "Cost3")
                 {
-                    // ƒRƒXƒg3Á”ï
+                    // ã‚³ã‚¹ãƒˆ3æ¶ˆè²»
                     script.Cost -= 3;
 
                     card();
 
                     script4.cms = 3;
 
-                    // ƒpƒbƒNƒ}ƒ“¶¬
+                    // ãƒ‘ãƒƒã‚¯ãƒãƒ³ç”Ÿæˆ
                     EffectE3 = GameObject.Find("004_Eat");
                     GameObject prefab = (GameObject)Resources.Load("Pac_Prefab");
                     Instantiate(prefab, new Vector3((tmp2.x - 640) / 35, 0, (tmp2.y - 400) / 35), Quaternion.identity);
-                    // ƒpƒbƒNƒ}ƒ“§Œä true
+                    // ãƒ‘ãƒƒã‚¯ãƒãƒ³åˆ¶å¾¡ true
                     script3.pacmanbl2 = true;
 
                     script7.audioSource.PlayOneShot(script7.sound1);
 
-                    // "‹ò"ƒGƒtƒFƒNƒg¶¬
+                    // "å–°"ã‚¨ãƒ•ã‚§ã‚¯ãƒˆç”Ÿæˆ
                     GameObject clone = Instantiate(EffectE3, new Vector3((tmp2.x - 640) / 35, 0.5f, (tmp2.y - 400) / 35), Quaternion.identity);
                     clone.transform.Rotate(new Vector3(90, 90, 0));
                     Destroy(clone, deleteTime);
 
-                    // ƒRƒXƒg•Ï“®
+                    // ã‚³ã‚¹ãƒˆå¤‰å‹•
                     Cst.GetComponent<CostNumberImage>().AllClear();
                     Cst.GetComponent<CostNumberImage>().Set1();
                 }
@@ -270,26 +270,26 @@ public class CardMoveScript : MonoBehaviour, IPointerDownHandler, IDragHandler, 
             {
                 if (ImgObj.tag == "Cost4")
                 {
-                    // ƒRƒXƒg4Á”ï
+                    // ã‚³ã‚¹ãƒˆ4æ¶ˆè²»
                     script.Cost -= 4;
 
                     card();
 
                     script4.cms = 4;
 
-                    // ƒ{ƒ€¶¬
+                    // ãƒœãƒ ç”Ÿæˆ
                     EffectB4 = GameObject.Find("006_Bom");
                     GameObject prefab = (GameObject)Resources.Load("bom2");
                     Instantiate(prefab, new Vector3((tmp2.x - 640) / 35, 0, (tmp2.y - 400) / 35), Quaternion.identity);
 
                     script7.audioSource.PlayOneShot(script7.sound4);
 
-                    // "”š"ƒGƒtƒFƒNƒg¶¬
+                    // "çˆ†"ã‚¨ãƒ•ã‚§ã‚¯ãƒˆç”Ÿæˆ
                     GameObject clone = Instantiate(EffectB4, new Vector3((tmp2.x - 640) / 35, 0.5f, (tmp2.y - 400) / 35), Quaternion.identity);
                     clone.transform.Rotate(new Vector3(90, 90, 0));
                     Destroy(clone, deleteTime);
 
-                    // ƒRƒXƒg•Ï“®
+                    // ã‚³ã‚¹ãƒˆå¤‰å‹•
                     Cst.GetComponent<CostNumberImage>().AllClear();
                     Cst.GetComponent<CostNumberImage>().Set1();
                 }
@@ -299,28 +299,28 @@ public class CardMoveScript : MonoBehaviour, IPointerDownHandler, IDragHandler, 
             {
                 if (ImgObj.tag == "Cost5")
                 {
-                    // ƒRƒXƒg5Á”ï
+                    // ã‚³ã‚¹ãƒˆ5æ¶ˆè²»
                     script.Cost -= 5;
 
                     card();
 
                     script4.cms = 5;
 
-                    // ƒgƒ‰ƒbƒN¶¬
+                    // ãƒˆãƒ©ãƒƒã‚¯ç”Ÿæˆ
                     EffectT5 = GameObject.Find("001_Syoukan");
                     GameObject prefab = (GameObject)Resources.Load("track");
                     Instantiate(prefab, new Vector3((tmp2.x - 640) / 35, -0.3f, (tmp2.y - 400) / 35), Quaternion.identity);
-                    // ƒgƒ‰ƒbƒN§Œä true
+                    // ãƒˆãƒ©ãƒƒã‚¯åˆ¶å¾¡ true
                     script3.trackbl2 = true;
 
                     script7.audioSource.PlayOneShot(script7.sound6);
 
-                    // "“Ë"ƒGƒtƒFƒNƒg¶¬
+                    // "çª"ã‚¨ãƒ•ã‚§ã‚¯ãƒˆç”Ÿæˆ
                     GameObject clone = Instantiate(EffectT5, new Vector3((tmp2.x - 640) / 35, 0.5f, (tmp2.y - 400) / 35), Quaternion.identity);
                     clone.transform.Rotate(new Vector3(90, 90, 0));
                     Destroy(clone, deleteTime);
 
-                    // ƒRƒXƒg•Ï“®
+                    // ã‚³ã‚¹ãƒˆå¤‰å‹•
                     Cst.GetComponent<CostNumberImage>().AllClear();
                     Cst.GetComponent<CostNumberImage>().Set1();
                 }
@@ -340,7 +340,8 @@ public class CardMoveScript : MonoBehaviour, IPointerDownHandler, IDragHandler, 
 
         script7.audioSource.PlayOneShot(script7.sound7);
     }
-
+    
+    // æ´ã‚“ã§ã„ã‚‹ã‚«ãƒ¼ãƒ‰ä»¥å¤–éè¡¨ç¤ºã«ãªã‚‹
     void sc()
     {
         if (ImgObj.tag == "Cost0")
