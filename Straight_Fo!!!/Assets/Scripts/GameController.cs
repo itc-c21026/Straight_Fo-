@@ -360,21 +360,6 @@ public class GameController : MonoBehaviour
         //まだ判定がついていないとき
         return false;
     }
-    
-    void Des()
-    {
-        GameObject[] KOMAs = GameObject.FindGameObjectsWithTag("KOMA");
-        foreach(GameObject Koma in KOMAs)
-        {
-            Destroy(Koma);
-        }
-
-        GameObject[] KOMAs2 = GameObject.FindGameObjectsWithTag("KOMA2");
-        foreach (GameObject Koma in KOMAs2)
-        {
-            Destroy(Koma);
-        }
-    }
 
     void CARD()
     {
