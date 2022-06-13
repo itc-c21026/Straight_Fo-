@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /*------------------------------------------
- —´‘¤‚ÌƒJ[ƒh‚ÌƒVƒƒƒbƒtƒ‹‚âƒ[ƒe[ƒVƒ‡ƒ“(„‰ñ)‚³‚¹‚éƒvƒƒOƒ‰ƒ€
+ é¾å´ã®ã‚«ãƒ¼ãƒ‰ã®ã‚·ãƒ£ãƒƒãƒ•ãƒ«ã‚„ãƒ­ãƒ¼ãƒ†ãƒ¼ã‚·ãƒ§ãƒ³(å·¡å›)ã•ã›ã‚‹ãƒ—ãƒ­ã‚°ãƒ©ãƒ 
 ------------------------------------------*/
 
 public class CardShuffle : MonoBehaviour
@@ -41,7 +41,7 @@ public class CardShuffle : MonoBehaviour
         bl2 = false;
         bl3 = false;
         bl4 = false;
-        // Å‰‚ÉƒJ[ƒh‚ğƒVƒƒƒbƒtƒ‹‚³‚¹‚é
+        // æœ€åˆã«ã‚«ãƒ¼ãƒ‰ã‚’ã‚·ãƒ£ãƒƒãƒ•ãƒ«ã•ã›ã‚‹
         Shuffle();
         Shuffle2();
     }
@@ -95,41 +95,41 @@ public class CardShuffle : MonoBehaviour
         }
     }
 
-    // —´‘¤‚ÌƒJ[ƒhƒVƒƒƒbƒtƒ‹ŠÖ”
+    // é¾å´ã®ã‚«ãƒ¼ãƒ‰ã‚·ãƒ£ãƒƒãƒ•ãƒ«é–¢æ•°
     void Shuffle()
     {
         Vector3 Rot;
 
-        // yÀ•WéŒ¾
+        // yåº§æ¨™å®£è¨€
         int y = 340;
 
-        // xÀ•WéŒ¾
+        // xåº§æ¨™å®£è¨€
         int x = -570;
 
-        // •\‚É•\¦‚³‚ê‚é3–‡‚ÌƒvƒƒOƒ‰ƒ€
+        // è¡¨ã«è¡¨ç¤ºã•ã‚Œã‚‹3æšã®ãƒ—ãƒ­ã‚°ãƒ©ãƒ 
         for (int i = 6; i > 3; i--)
         {
-            // ƒ‰ƒ“ƒ_ƒ€‚Å1–‡‚ğŒˆ‚ß‚é
+            // ãƒ©ãƒ³ãƒ€ãƒ ã§1æšã‚’æ±ºã‚ã‚‹
             int s = UnityEngine.Random.Range(1, i);
             s -= 1;
 
-            // Šù‚É•\‚É•\¦‚³‚ê‚Ä‚¢‚é‚©Šm”F
+            // æ—¢ã«è¡¨ã«è¡¨ç¤ºã•ã‚Œã¦ã„ã‚‹ã‹ç¢ºèª
             if(s != tmp[5] && s != tmp[4] && s != tmp[3] && s != tmp[2] && s != tmp[1] && s != tmp[0])
             {
-                // Œˆ‚Ü‚Á‚½”š‚ÌƒJ[ƒh‚ğ¶¬
+                // æ±ºã¾ã£ãŸæ•°å­—ã®ã‚«ãƒ¼ãƒ‰ã‚’ç”Ÿæˆ
                 prefab[s] = Instantiate(card[s], new Vector3(x, y, 0), Quaternion.identity);
 
-                // ¶¬‚³‚ê‚½ƒJ[ƒh‚Éz‰ñ“]-90‚ğ‰Á‚¦‚é
+                // ç”Ÿæˆã•ã‚ŒãŸã‚«ãƒ¼ãƒ‰ã«zå›è»¢-90ã‚’åŠ ãˆã‚‹
                 Rot = prefab[s].gameObject.transform.localEulerAngles;
                 Rot = new Vector3(0, 0, -90);
                 prefab[s].gameObject.transform.localEulerAngles = Rot;
-                // ¶¬‚³‚ê‚éƒJ[ƒh‚ğcanvas‚Ìq‚É‚·‚é
+                // ç”Ÿæˆã•ã‚Œã‚‹ã‚«ãƒ¼ãƒ‰ã‚’canvasã®å­ã«ã™ã‚‹
                 prefab[s].transform.SetParent(this.canvas.transform, false);
 
-                // Ÿ‚ÌƒJ[ƒh‚ğyÀ•W-60,xÀ•W-55‚É¶¬‚·‚é‚æ‚¤‚Éİ’è
+                // æ¬¡ã®ã‚«ãƒ¼ãƒ‰ã‚’yåº§æ¨™-150ã«ç”Ÿæˆã™ã‚‹ã‚ˆã†ã«è¨­å®š
                 y -= 150;
 
-                // ¶¬‚³‚ê‚½ƒJ[ƒh‚Ì”’l‚ğ“ü‚ê‚é
+                // ç”Ÿæˆã•ã‚ŒãŸã‚«ãƒ¼ãƒ‰ã®æ•°å€¤ã‚’å…¥ã‚Œã‚‹
                 tmp[s] = s;
             }
             else
@@ -138,10 +138,10 @@ public class CardShuffle : MonoBehaviour
             }
         }
 
-        // ƒJ[ƒh‚ğ„‰ñ‚³‚¹‚é‚½‚ß‚É¶¬‚µ‚Ä‚¨‚­
+        // ã‚«ãƒ¼ãƒ‰ã‚’å·¡å›ã•ã›ã‚‹ãŸã‚ã«ç”Ÿæˆã—ã¦ãŠã
         for(int j = 0; j < 6; j++)
         {
-            // •\‚É•\¦‚³‚¹‚éƒvƒƒOƒ‰ƒ€‚Æ‚Ù‚Ú“¯‚¶
+            // è¡¨ã«è¡¨ç¤ºã•ã›ã‚‹ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã¨ã»ã¼åŒã˜
             if (j != tmp[5] && j != tmp[4] && j != tmp[3] && j != tmp[2] && j != tmp[1] && j != tmp[0])
             {
                 
@@ -155,7 +155,7 @@ public class CardShuffle : MonoBehaviour
                 y += 120;
                 tmp[j] = j;
                 
-                // — ‚ÌƒJ[ƒh‚ğ‘Ò‹@‚³‚¹‚é
+                // è£ã®ã‚«ãƒ¼ãƒ‰ã‚’å¾…æ©Ÿã•ã›ã‚‹
                 if (Taiki[0] == 9)
                 {
                     Taiki[0] = j;
@@ -171,13 +171,13 @@ public class CardShuffle : MonoBehaviour
         }
     }
 
-    // –P‘¤‚ÌƒJ[ƒhƒVƒƒƒbƒtƒ‹ŠÖ”
-    // d‘g‚İ‚Í—´‘¤‚Æ“¯‚¶
+    // é³³å´ã®ã‚«ãƒ¼ãƒ‰ã‚·ãƒ£ãƒƒãƒ•ãƒ«é–¢æ•°
+    // ä»•çµ„ã¿ã¯é¾å´ã¨åŒã˜
     void Shuffle2()
     {
         Vector3 Rot;
 
-        // yÀ•WéŒ¾
+        // yåº§æ¨™å®£è¨€
         int y = -340;
         int x = 570;
         for (int i = 6; i > 3; i--)
@@ -195,7 +195,6 @@ public class CardShuffle : MonoBehaviour
                 prefab2[s].transform.SetParent(this.canvas.transform, false);
 
                 y += 150;
-                //x += 55;
                 tmp2[s] = s;
             }
             else
@@ -206,7 +205,7 @@ public class CardShuffle : MonoBehaviour
 
         for (int j = 0; j < 6; j++)
         {
-            // •\‚É•\¦‚³‚¹‚éƒvƒƒOƒ‰ƒ€‚Æ‚Ù‚Ú“¯‚¶
+            // è¡¨ã«è¡¨ç¤ºã•ã›ã‚‹ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã¨ã»ã¼åŒã˜
             if (j != tmp2[5] && j != tmp2[4] && j != tmp2[3] && j != tmp2[2] && j != tmp2[1] && j != tmp2[0])
             {
 
@@ -220,22 +219,19 @@ public class CardShuffle : MonoBehaviour
                 y += 120;
                 tmp2[j] = j;
 
-                // — ‚ÌƒJ[ƒh‚ğ‘Ò‹@‚³‚¹‚é
+                // è£ã®ã‚«ãƒ¼ãƒ‰ã‚’å¾…æ©Ÿã•ã›ã‚‹
                 if (Taiki2[0] == 9)
                 {
                     Taiki2[0] = j;
-                    //Debug.Log(Taiki2[0]);
 
                 }
                 else if (Taiki2[1] == 9)
                 {
                     Taiki2[1] = j;
-                    //Debug.Log(Taiki2[1]);
                 }
                 else if (Taiki2[2] == 9)
                 {
                     Taiki2[2] = j;
-                    //Debug.Log(Taiki2[2]);
                 }
             }
         }
