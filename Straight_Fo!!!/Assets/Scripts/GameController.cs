@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /*--------------------------------------
- ƒQ[ƒ€ƒVƒXƒeƒ€‚ğ§Œä‚·‚éƒvƒƒOƒ‰ƒ€
+ ã‚²ãƒ¼ãƒ ã‚·ã‚¹ãƒ†ãƒ ã‚’åˆ¶å¾¡ã™ã‚‹ãƒ—ãƒ­ã‚°ãƒ©ãƒ 
 --------------------------------------*/
 
 public class GameController : MonoBehaviour
@@ -96,7 +96,7 @@ public class GameController : MonoBehaviour
     void Update()
     {
 
-        //ŒéÎ‚ª‘µ‚Á‚Ä‚¢‚é‚©‚Ç‚¤‚©Šm”F‚·‚é
+        //ç¢çŸ³ãŒæƒã£ã¦ã„ã‚‹ã‹ã©ã†ã‹ç¢ºèªã™ã‚‹
         if (CheckStone(WHITE) || CheckStone(BLACK))
         {
             return;
@@ -105,7 +105,7 @@ public class GameController : MonoBehaviour
         CARD();
     }
 
-    // ”O‚Ì‚½‚ßÅ‰‚Í‘S‚Ä‹ó‚É‚·‚é
+    // å¿µã®ãŸã‚æœ€åˆã¯å…¨ã¦ç©ºã«ã™ã‚‹
     void InitializeArray()
     {
         for (int i = 0; i < 13; i++)
@@ -117,29 +117,29 @@ public class GameController : MonoBehaviour
         }
     }
 
-    //5ŒÂ˜A‘±‚ÅŒéÎ‚ª’u‚©‚ê‚Ä‚¢‚é‚©Šm”F‚·‚é(color‚É”»’è‚·‚éF‚ğ“n‚·)
+    //5å€‹é€£ç¶šã§ç¢çŸ³ãŒç½®ã‹ã‚Œã¦ã„ã‚‹ã‹ç¢ºèªã™ã‚‹(colorã«åˆ¤å®šã™ã‚‹è‰²ã‚’æ¸¡ã™)
     private bool CheckStone(int color)
     {
 
-        //‰¡Œü‚«
+        //æ¨ªå‘ã
         for (int i = 0; i < 13; i++)
         {
             for (int j = 0; j < 13; j++)
             {
-                //squares‚Ì’l‚ª‹ó‚Ì‚Æ‚«
+                //squaresã®å€¤ãŒç©ºã®ã¨ã
                 if (squares[i, j] == EMPTY || squares[i, j] != color)
                 {
-                    //count‚ğ‰Šú‰»‚·‚é
+                    //countã‚’åˆæœŸåŒ–ã™ã‚‹
                     count = 0;
                 }
                 else
                 {
-                    //count‚Ésquares‚Ì’l‚ğŠi”[‚·‚é
+                    //countã«squaresã®å€¤ã‚’æ ¼ç´ã™ã‚‹
                     count++;
                 }
 
 
-                //count‚Ì’l‚ª5‚É‚È‚Á‚½‚Æ‚«
+                //countã®å€¤ãŒ4ã«ãªã£ãŸã¨ã
                 if (count == 4)
                 {
                     if (color == WHITE)
@@ -157,27 +157,27 @@ public class GameController : MonoBehaviour
             }
         }
 
-        //count‚Ì’l‚ğ‰Šú‰»
+        //countã®å€¤ã‚’åˆæœŸåŒ–
         count = 0;
 
-        //cŒü‚«
+        //ç¸¦å‘ã
         for (int i = 0; i < 13; i++)
         {
             for (int j = 0; j < 13; j++)
             {
-                //squares‚Ì’l‚ª‹ó‚Ì‚Æ‚«
+                //squaresã®å€¤ãŒç©ºã®ã¨ã
                 if (squares[j, i] == EMPTY || squares[j, i] != color)
                 {
-                    //count‚ğ‰Šú‰»‚·‚é
+                    //countã‚’åˆæœŸåŒ–ã™ã‚‹
                     count = 0;
                 }
                 else
                 {
-                    //count‚Ésquares‚Ì’l‚ğŠi”[‚·‚é
+                    //countã«squaresã®å€¤ã‚’æ ¼ç´ã™ã‚‹
                     count++;
                 }
 
-                //count‚Ì’l‚ª5‚É‚È‚Á‚½‚Æ‚«
+                //countã®å€¤ãŒ4ã«ãªã£ãŸã¨ã
                 if (count == 4)
                 {
                     if (color == WHITE)
@@ -194,29 +194,29 @@ public class GameController : MonoBehaviour
             }
         }
 
-        //count‚Ì’l‚ğ‰Šú‰»
+        //countã®å€¤ã‚’åˆæœŸåŒ–
         count = 0;
 
-        //Î‚ß(‰Eã‚ª‚è)
+        //æ–œã‚(å³ä¸ŠãŒã‚Š)
         for (int i = 0; i < 13; i++)
         {
-            //ãˆÚ“®—p
+            //ä¸Šç§»å‹•ç”¨
             int up = 0;
 
             for (int j = i; j < 13; j++)
             {
-                //squares‚Ì’l‚ª‹ó‚Ì‚Æ‚«
+                //squaresã®å€¤ãŒç©ºã®ã¨ã
                 if (squares[j, up] == EMPTY || squares[j, up] != color)
                 {
-                    //count‚ğ‰Šú‰»‚·‚é
+                    //countã‚’åˆæœŸåŒ–ã™ã‚‹
                     count = 0;                }
                 else
                 {
-                    //count‚Ésquares‚Ì’l‚ğŠi”[‚·‚é
+                    //countã«squaresã®å€¤ã‚’æ ¼ç´ã™ã‚‹
                     count++;
                 }
 
-                //count‚Ì’l‚ª5‚É‚È‚Á‚½‚Æ‚«
+                //countã®å€¤ãŒ4ã«ãªã£ãŸã¨ã
                 if (count == 4)
                 {
                     if (color == WHITE)
@@ -239,24 +239,24 @@ public class GameController : MonoBehaviour
 
         for (int i = 0; i < 13; i++)
         {
-            //ãˆÚ“®—p
+            //ä¸Šç§»å‹•ç”¨
             int up = 0;
 
             for (int j = i; j < 13; j++)
             {
-                //squares‚Ì’l‚ª‹ó‚Ì‚Æ‚«
+                //squaresã®å€¤ãŒç©ºã®ã¨ã
                 if (squares[up, j] == EMPTY || squares[up, j] != color || i == 0)
                 {
-                    //count‚ğ‰Šú‰»‚·‚é
+                    //countã‚’åˆæœŸåŒ–ã™ã‚‹
                     count = 0;
                 }
                 else
                 {
-                    //count‚Ésquares‚Ì’l‚ğŠi”[‚·‚é
+                    //countã«squaresã®å€¤ã‚’æ ¼ç´ã™ã‚‹
                     count++;
                 }
 
-                //count‚Ì’l‚ª5‚É‚È‚Á‚½‚Æ‚«
+                //countã®å€¤ãŒ4ã«ãªã£ãŸã¨ã
                 if (count == 4)
                 {
                     if (color == WHITE)
@@ -274,30 +274,30 @@ public class GameController : MonoBehaviour
             }
         }
         
-        //count‚Ì’l‚ğ‰Šú‰»
+        //countã®å€¤ã‚’åˆæœŸåŒ–
         count = 0;
 
-        //Î‚ß(‰E‰º‚ª‚è)
+        //æ–œã‚(å³ä¸‹ãŒã‚Š)
         for (int i = 0; i < 13; i++)
         {
-            //‰ºˆÚ“®—p
+            //ä¸‹ç§»å‹•ç”¨
             int down = 12;
 
             for (int j = i; j < 13; j++)
             {
-                //squares‚Ì’l‚ª‹ó‚Ì‚Æ‚«
+                //squaresã®å€¤ãŒç©ºã®ã¨ã
                 if (squares[j, down] == EMPTY || squares[j, down] != color)
                 {
-                    //count‚ğ‰Šú‰»‚·‚é
+                    //countã‚’åˆæœŸåŒ–ã™ã‚‹
                     count = 0;
                 }
                 else
                 {
-                    //count‚Ésquares‚Ì’l‚ğŠi”[‚·‚é
+                    //countã«squaresã®å€¤ã‚’æ ¼ç´ã™ã‚‹
                     count++;
                 }
 
-                //count‚Ì’l‚ª5‚É‚È‚Á‚½‚Æ‚«
+                //countã®å€¤ãŒ4ã«ãªã£ãŸã¨ã
                 if (count == 4)
                 {
 
@@ -321,24 +321,24 @@ public class GameController : MonoBehaviour
 
         for (int i = 12; i > 0; i--)
         {
-            //‰ºˆÚ“®—p
+            //ä¸‹ç§»å‹•ç”¨
             int down = 0;
 
             for (int j = i; j >= 0; j--)
             {
-                //squares‚Ì’l‚ª‹ó‚Ì‚Æ‚«
+                //squaresã®å€¤ãŒç©ºã®ã¨ã
                 if (squares[down, j] == EMPTY || squares[down, j] != color)
                 {
-                    //count‚ğ‰Šú‰»‚·‚é
+                    //countã‚’åˆæœŸåŒ–ã™ã‚‹
                     count = 0;
                 }
                 else
                 {
-                    //count‚Ésquares‚Ì’l‚ğŠi”[‚·‚é
+                    //countã«squaresã®å€¤ã‚’æ ¼ç´ã™ã‚‹
                     count++;
                 }
 
-                //count‚Ì’l‚ª5‚É‚È‚Á‚½‚Æ‚«
+                //countã®å€¤ãŒ4ã«ãªã£ãŸã¨ã
                 if (count == 4)
                 {
 
@@ -357,7 +357,7 @@ public class GameController : MonoBehaviour
                 down++;
             }
         }
-        //‚Ü‚¾”»’è‚ª‚Â‚¢‚Ä‚¢‚È‚¢‚Æ‚«
+        //ã¾ã åˆ¤å®šãŒã¤ã„ã¦ã„ãªã„ã¨ã
         return false;
     }
     
