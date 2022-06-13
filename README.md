@@ -1,5 +1,5 @@
 # Straight_Fo!!!
-チーム制作「Straight_Fo!!!」
+ゲーム制作「Straight_Fo!!!」
 
 ## メンバー/役割
 ・與那覇帆風 / プログラマ  
