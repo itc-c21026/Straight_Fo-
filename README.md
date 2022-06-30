@@ -3,33 +3,30 @@
 
 ## メンバー/役割
 ・與那覇帆風 / プログラマ  
-・与那嶺達矢 / デザイナー  
-・荻堂盛那 / デザイナー  
+・岩城仁貴 / プログラマ  
+・花城英斗 / 2Dデザイナー・その他データ管理  
 
 ## ファイル構成
-・[Unityデータ](Straight_Fo!!!)
+・Disturbance Survival
 
 ## 概要
 
 ## ジャンル
-対戦ゲーム
+非対称対人脱出ゲーム
 
 ## プラットフォーム
-・[Android](https://github.com/itc-c21026/Straight_Fo-/blob/main/Straight_Fo!!!/Straight_Fo!!!.apk)
+・[Android]
+・[Windows]
 
 ## 使用言語
 C#
 
 ## 主なプログラム
-・[駒を投げる](https://github.com/itc-c21026/Straight_Fo-/blob/main/Straight_Fo!!!/Assets/Scripts/Ball.cs)  
-・[カードをドラッグして駒を召喚する](https://github.com/itc-c21026/Straight_Fo-/blob/main/Straight_Fo!!!/Assets/Scripts/CardMoveScript.cs)  
-・[ゲームシステム制御](https://github.com/itc-c21026/Straight_Fo-/blob/main/Straight_Fo!!!/Assets/Scripts/GameController.cs)
+UI
 
 ## ゲームルール  
-駒を掴み、スワイプで投げる  
-カードは普通の駒や、様々な能力を持つ特殊駒を召喚できる  
-カードを使うには、コストが必要で、コストは時間経過で増える  
-お互いに駒を投げ合い、駒を4つ並べ、先にゲージを溜めたプレイヤーの勝利
+### Android
+・ロビー画面でキャラを選択して準備完了を押しスタート
 
 ## Unityバージョン
 Unity 2020.3.4f1
